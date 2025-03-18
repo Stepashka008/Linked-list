@@ -14,5 +14,8 @@ fun main() {
 
     myList.insert(3, 8); // Вставляем на 9 место
 
+    myList.pop_back(); // Удаляем последний элемент
+    myList.pop_back();
+
     println(myList.toString());
 }

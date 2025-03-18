@@ -46,6 +46,16 @@ class MyList<T : Any> {
         tmp.setChild(newTmp);
         count++;
     }
+    fun pop_back() {
+        var tmp: LinkedList<T> = first;
+        var i: Int = 1;
+        while (i != count) {
+            tmp = tmp.getChild()!!; // Если значение null выбросится ошибка
+            i++;
+        }
+        tmp.setChild(last);
+        count--;
+    }
     override fun toString(): String { // Вывод списка на консоль
         var tmp: LinkedList<T> = first.getChild()!!; // Если значение null выбросится ошибка
 
