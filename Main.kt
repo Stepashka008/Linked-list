@@ -20,5 +20,8 @@ fun main() {
     myList.pop_front(); // Удаление первого элемента
     myList.pop_front();
 
+    myList.remove_at(6); // Удаляем элемент на 9 месте
+    myList.remove_at(2); // Удаляем элемент на 2 месте
+
     println(myList.toString());
 }

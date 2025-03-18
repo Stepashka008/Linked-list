@@ -61,6 +61,24 @@ class MyList<T : Any> {
         first.setChild(tmp);
         count--;
     }
+    fun remove_at(index: Int) { // Удаление по указанному индексу
+        var tmp: LinkedList<T> = first;
+        var i: Int = 0;
+        while (i != index - 1) {
+            tmp = tmp.getChild()!!;
+            i++;
+        }
+        println(tmp.getContent());
+        try {
+            val newTmp = tmp.getChild()?.getChild();
+            tmp.setChild(newTmp!!);
+        }
+        catch (ex: Exception) {
+            tmp.setChild(last);
+        }
+        count--;
+    }
+    
     override fun toString(): String { // Вывод списка на консоль
         var tmp: LinkedList<T> = first.getChild()!!; // Если значение null выбросится ошибка
 
