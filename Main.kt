@@ -33,6 +33,8 @@ fun main() {
 
     println("Первый элемент списка: " + myList.front().getContent()); // Вывод первого элемента списка
 
+    println("Последний элемент списка: " + myList.back().getContent()); // Вывод последнего элемента списка
+
     println(myList.toString());
 
     myList.clear(); // Очищение списка

@@ -108,8 +108,14 @@ class MyList<T : Any> {
     fun front() : LinkedList<T> { // Возвращает первый элемент списка
         return first.getChild()!!;
     }
-    fun back() { // Возвращает последний элемент списка
-
+    fun back() : LinkedList<T> { // Возвращает последний элемент списка
+        var tmp: LinkedList<T> = first;
+        var i: Int = 0;
+        while (i != count) {
+            tmp = tmp.getChild()!!; // Если значение null выбросится ошибка
+            i++;
+        }
+        return tmp;
     }
     override fun toString(): String { // Вывод списка на консоль
         var tmp: LinkedList<T> = first.getChild()!!; // Если значение null выбросится ошибка
