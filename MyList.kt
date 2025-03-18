@@ -101,32 +101,46 @@ class MyList<T : Any> {
     fun empty() : Boolean { // Пустой ли список
         return count == 0;
     }
+    fun clear() { // Очищает список
+        first.setChild(last);
+        count = 0;
+    }
+    fun front() : LinkedList<T> { // Возвращает первый элемент списка
+        return first.getChild()!!;
+    }
+    fun back() { // Возвращает последний элемент списка
+
+    }
     override fun toString(): String { // Вывод списка на консоль
         var tmp: LinkedList<T> = first.getChild()!!; // Если значение null выбросится ошибка
 
         var strContent: String = "f";
         var strChildContent: String = "${first.getChild()?.getContent()}";
 
+        if (!empty()) {
+            var i: Int = 0;
+            while (i != count) {
+                strContent += " ${tmp.getContent()}";
+                tmp = tmp.getChild()!!;
+                i++;
+            }
+            strContent += " l\n";
 
-        var i: Int = 0;
-        while (i != count) {
-            strContent += " ${tmp.getContent()}";
-            tmp = tmp.getChild()!!;
-            i++;
+            tmp= first.getChild()!!;
+            i = 1;
+            while (i != count) {
+                strChildContent += " ${tmp.getChild()?.getContent()}";
+                tmp = tmp.getChild()!!;
+                i++;
+            }
+            strChildContent += " l";
+
+            val str: String = strContent + strChildContent;
+
+            return str;
         }
-        strContent += " l\n";
-
-        tmp= first.getChild()!!;
-        i = 1;
-        while (i != count) {
-            strChildContent += " ${tmp.getChild()?.getContent()}";
-            tmp = tmp.getChild()!!;
-            i++;
+        else {
+            return "f l\nl";
         }
-        strChildContent += " l";
-
-        val str: String = strContent + strChildContent;
-
-        return str;
     }
 }

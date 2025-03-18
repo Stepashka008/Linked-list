@@ -29,7 +29,13 @@ fun main() {
 
     println("Кол-во элементов в списке: " + myList.Count()); // Выдает сколько элементов в списке (с учётом first и last)
 
-    println("Пустой ли список: " + myList.empty());
+    println("Пустой ли список: " + myList.empty()); // Проверка пустой ли список
+
+    println("Первый элемент списка: " + myList.front().getContent()); // Вывод первого элемента списка
+
+    println(myList.toString());
+
+    myList.clear(); // Очищение списка
 
     println(myList.toString());
 }
