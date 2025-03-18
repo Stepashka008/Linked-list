@@ -9,13 +9,16 @@ fun main() {
     myList.push_back(7);
     myList.push_back(6);
 
-    myList.push_front(-8); // Вставляем в конец списка
+    myList.push_front(-8); // Вставляем в начало списка
     myList.push_front(-4);
 
     myList.insert(3, 8); // Вставляем на 9 место
 
     myList.pop_back(); // Удаляем последний элемент
     myList.pop_back();
+
+    myList.pop_front(); // Удаление первого элемента
+    myList.pop_front();
 
     println(myList.toString());
 }

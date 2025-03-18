@@ -46,7 +46,7 @@ class MyList<T : Any> {
         tmp.setChild(newTmp);
         count++;
     }
-    fun pop_back() {
+    fun pop_back() { // Удаление последнего элемента в списке
         var tmp: LinkedList<T> = first;
         var i: Int = 1;
         while (i != count) {
@@ -54,6 +54,11 @@ class MyList<T : Any> {
             i++;
         }
         tmp.setChild(last);
+        count--;
+    }
+    fun pop_front() { // Удаление первого элемента
+        var tmp: LinkedList<T> = first.getChild()?.getChild()!!;
+        first.setChild(tmp);
         count--;
     }
     override fun toString(): String { // Вывод списка на консоль
