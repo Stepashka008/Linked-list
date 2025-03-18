@@ -35,7 +35,17 @@ class MyList<T : Any> {
         first.setChild(newTmp);
         count++;
     }
-
+    fun insert(content: T, index: Int) { // Добавляет элемент по индексу (ИНДЕКС !!! Будет начинаться с first (То есть индекс first = 0)
+        var tmp: LinkedList<T> = first;
+        var i: Int = 0;
+        while (i != index - 1) {
+            tmp = tmp.getChild()!!;
+            i++;
+        }
+        val newTmp = LinkedList<T>(content, tmp.getChild()!!);
+        tmp.setChild(newTmp);
+        count++;
+    }
     override fun toString(): String { // Вывод списка на консоль
         var tmp: LinkedList<T> = first.getChild()!!; // Если значение null выбросится ошибка
 
