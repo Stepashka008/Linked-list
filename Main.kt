@@ -7,5 +7,9 @@ fun main() {
     myList.push_back(1);
     myList.push_back(7);
     myList.push_back(6);
+
+    myList.push_front(-8);
+    myList.push_front(-4);
+
     println(myList.toString());
 }

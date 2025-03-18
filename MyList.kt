@@ -12,7 +12,7 @@ class MyList<T : Any> {
         count = 0;
     }
 
-    fun push_back(content: T) {
+    fun push_back(content: T) { // Добавление элемента в конец списка
         var tmp: LinkedList<T> = first;
         if (first.getChild() == last) { // Если первый элемент указывает на последний
             tmp = LinkedList<T>(content, last); // Создание нового элемента
@@ -29,10 +29,14 @@ class MyList<T : Any> {
             tmp.setChild(newTmp);
             count++;
         }
-
+    }
+    fun push_front(content: T) { // Добавление элемента в начало списка
+        val newTmp = LinkedList<T>(content, first.getChild()!!);
+        first.setChild(newTmp);
+        count++;
     }
 
-    override fun toString(): String {
+    override fun toString(): String { // Вывод списка на консоль
         var tmp: LinkedList<T> = first.getChild()!!; // Если значение null выбросится ошибка
 
         var strContent: String = "f";
