@@ -1,4 +1,4 @@
-class MyList<T : Any> {
+class MyList<T : Any> { // Any - Любой тип кроме null
 
     private val last: LinkedList<T>; // Последний элемент связанного списка
     private val first: LinkedList<T>; // Первый элемент списка после головы
