@@ -86,6 +86,21 @@ class MyList<T : Any> {
         }
         tmp.setContent(content);
     }
+    fun answer_index(index: Int) { // Чтение элемента по индексу
+        var tmp: LinkedList<T> = first;
+        var i: Int = 0;
+        while (i != index) {
+            tmp = tmp.getChild()!!;
+            i++;
+        }
+        println("На " +"${index + 1} месте находится: " + tmp.getContent());
+    }
+    fun Count() : Int {
+        return (count + 2);
+    }
+    fun empty() : Boolean { // Пустой ли список
+        return count == 0;
+    }
     override fun toString(): String { // Вывод списка на консоль
         var tmp: LinkedList<T> = first.getChild()!!; // Если значение null выбросится ошибка
 

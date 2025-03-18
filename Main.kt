@@ -25,5 +25,11 @@ fun main() {
 
     myList.size_index(7, 1); // Заменяем значение элемента 1 индекса
 
+    myList.answer_index(2); // Чтение элемента, который стоит на 3 месте
+
+    println("Кол-во элементов в списке: " + myList.Count()); // Выдает сколько элементов в списке (с учётом first и last)
+
+    println("Пустой ли список: " + myList.empty());
+
     println(myList.toString());
 }
