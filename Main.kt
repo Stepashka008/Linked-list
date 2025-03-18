@@ -23,5 +23,7 @@ fun main() {
     myList.remove_at(6); // Удаляем элемент на 9 месте
     myList.remove_at(2); // Удаляем элемент на 2 месте
 
+    myList.size_index(7, 1); // Заменяем значение элемента 1 индекса
+
     println(myList.toString());
 }

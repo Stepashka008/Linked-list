@@ -68,7 +68,6 @@ class MyList<T : Any> {
             tmp = tmp.getChild()!!;
             i++;
         }
-        println(tmp.getContent());
         try {
             val newTmp = tmp.getChild()?.getChild();
             tmp.setChild(newTmp!!);
@@ -78,7 +77,15 @@ class MyList<T : Any> {
         }
         count--;
     }
-    
+    fun size_index(content: T, index: Int) { // Изменение значение в указанном по индексу элементе
+        var tmp: LinkedList<T> = first;
+        var i: Int = 0;
+        while (i != index) {
+            tmp = tmp.getChild()!!;
+            i++;
+        }
+        tmp.setContent(content);
+    }
     override fun toString(): String { // Вывод списка на консоль
         var tmp: LinkedList<T> = first.getChild()!!; // Если значение null выбросится ошибка
 
