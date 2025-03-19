@@ -1,6 +1,9 @@
 fun main() {
     val myList: MyList<Int> = MyList<Int>();
 
+    println("Изначальный массив: ");
+    println(myList.toString() + "\n");
+
     myList.push_back(5); // Вставляем в конец списка
     myList.push_back(8);
     myList.push_back(9);
@@ -9,35 +12,48 @@ fun main() {
     myList.push_back(7);
     myList.push_back(6);
 
+    println("Массив после добавления в конец 5, 8, 9, 3, 1, 7, 6: ")
+    println(myList.toString() + "\n");
+
     myList.push_front(-8); // Вставляем в начало списка
     myList.push_front(-4);
+    println("Массив после добавления в начало -8, -4: ")
+    println(myList.toString() + "\n");
 
     myList.insert(3, 8); // Вставляем на 9 место
+    println("Массив после добавления 3 на 9 место: ")
+    println(myList.toString() + "\n");
 
     myList.pop_back(); // Удаляем последний элемент
-    myList.pop_back();
+    println("Массив после удаления последнего элемента: ")
+    println(myList.toString() + "\n");
 
     myList.pop_front(); // Удаление первого элемента
-    myList.pop_front();
+    println("Массив после удаления первого элемента: ")
+    println(myList.toString() + "\n");
 
-    myList.remove_at(6); // Удаляем элемент на 9 месте
-    myList.remove_at(2); // Удаляем элемент на 2 месте
+    myList.remove_at(6); // Удаляем элемент на 7 месте
+    myList.remove_at(2); // Удаляем элемент на 3 месте
+    println("Массив после удаления элементов на 3 и 7 местах: ")
+    println(myList.toString() + "\n");
 
     myList.size_index(7, 1); // Заменяем значение элемента 1 индекса
+    println("Массив после замены 2 места на 7: ")
+    println(myList.toString() + "\n");
 
     myList.answer_index(2); // Чтение элемента, который стоит на 3 месте
 
-    println("Кол-во элементов в списке: " + myList.Count()); // Выдает сколько элементов в списке (с учётом first и last)
+    println();
 
-    println("Пустой ли список: " + myList.empty()); // Проверка пустой ли список
+    println("Кол-во элементов в списке: " + myList.Count() + "\n"); // Выдает сколько элементов в списке (с учётом first и last)
 
-    println("Первый элемент списка: " + myList.front().getContent()); // Вывод первого элемента списка
+    println("Пустой ли список: " + myList.empty() + "\n"); // Проверка пустой ли список
 
-    println("Последний элемент списка: " + myList.back().getContent()); // Вывод последнего элемента списка
+    println("Первый элемент списка: " + myList.front().getContent() + "\n"); // Вывод первого элемента списка
 
-    println(myList.toString());
+    println("Последний элемент списка: " + myList.back().getContent() + "\n"); // Вывод последнего элемента списка
 
     myList.clear(); // Очищение списка
-
-    println(myList.toString());
+    println("Массив после очищения всего списка: ")
+    println(myList.toString() + "\n");
 }
